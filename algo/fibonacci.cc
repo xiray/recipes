@@ -3,14 +3,14 @@
 
 using namespace std;
 
-int fib(int n) {
+static int fib(int n) {
   if (n < 2) {
     return n;
   }
   return fib(n - 1) + fib(n - 2);
 }
 
-int fib_non_recursive(int n) {
+static int fib_non_recursive(int n) {
   if (n < 2) {
     return n;
   }
@@ -23,7 +23,7 @@ int fib_non_recursive(int n) {
   return k0 + k1;
 }
 
-int fib_with_cache(int n) {
+static int fib_with_cache(int n) {
   if (n < 2) {
     return n;
   }
