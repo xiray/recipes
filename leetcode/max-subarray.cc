@@ -1,4 +1,4 @@
-#include "utils.hh"
+#include "../include/utils.hh"
 
 static int maxSubArray(vector<int>& nums) {
   if (nums.empty()) {
@@ -17,6 +17,6 @@ static int maxSubArray(vector<int>& nums) {
 int main(int argc, char** argv) {
   int a[] = {-2,1,-3,4,-1,2,1,-5,4,-1,-2,7};
   vector<int> v(a, a + arrlen(a));
-  cout << maxSubArray(v) << endl;
+  cout << v << ": " << maxSubArray(v) << endl;
   return 0;
 }

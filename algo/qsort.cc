@@ -1,18 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <cstdlib>
-
-using namespace std;
-
-static void print(const vector<int>& a) {
-  for (size_t i = 0; i < a.size(); ++i) {
-    if (i) {
-      cout << ",";
-    }
-    cout << a[i];
-  }
-  cout << endl;
-}
+#include "../include/utils.hh"
 
 static void _qsort(vector<int>& a, size_t begin, size_t end) {
   if (begin >= end) {
@@ -49,10 +35,8 @@ int main(int argc, char** argv) {
   for (int i = 0; i < 10; ++i) {
     a.push_back(random() % 100);
   }
-  cout << "---" << endl;
-  print(a);
+  cout << "---\n" << a << endl;
   qsort(a);
-  cout << "sorted ->" << endl;
-  print(a);
+  cout << "sorted ->\n" << a << endl;
   return 0;
 }
