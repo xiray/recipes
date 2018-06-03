@@ -12,9 +12,7 @@ static int numSquares(int n) {
 }
 
 int main(int argc, char** argv) {
-  int n = 0;
-  cout << "Enter number: ";
-  cin >> n;
+  int n = enterNumber();
   cout << "Number of squares: " << numSquares(n) << endl;
   return 0;
 }
