@@ -80,14 +80,11 @@ int StreamingStats::NewData(double x)
 		index++;
 		if (index >= ss_Size)
 			index = 0;
-		// Remove oldest data point from mean
-		ss_Mean = ss_Mean - (ss_Data[index] - ss_Mean) / ss_Size;
-		// Add new data point to mean
-		ss_Mean = ss_Mean + (x - ss_PrevMean) / ss_Size;
-		// Remove oldest data point from sum
-		ss_Sum = ss_Sum - (ss_Data[index] - ss_PrevMean) * (ss_Data[index] - ss_Mean);
-		// Add new data point to sum
-		ss_Sum = ss_Sum + (x - ss_PrevMean) * (x - ss_Mean);
+    double oldest = ss_Data[index];
+
+    ss_Mean = ss_PrevMean + (x - oldest) / ss_Size;
+    
+		ss_Sum = ss_Sum - (oldest - ss_PrevMean) * (oldest - ss_Mean) + (x - ss_PrevMean) * (x - ss_Mean);
 	}
 	else { // We're still filling the window
 		count++;
